@@ -1,4 +1,4 @@
-#1) récupérer le zip fourni par ENEDIS (comptuert linky)
+#1) récupérer le zip fourni par ENEDIS (compteurt linky)
 #2) renommer le fichier mes-puissances-atteintes-30min-XXXXXXXXXXXXXXXXXX.csv en mes-puissances-atteintes-30min.csv
 
 #******************************************************************
