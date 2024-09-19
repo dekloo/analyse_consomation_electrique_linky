@@ -140,11 +140,17 @@ moyenne_conso <- data %>%
   group_by(anneemois, heure) %>%
   summarise(moy_conso = mean(conso, na.rm = TRUE))
 
+# Note : Là on touche à ggplot() donc les gouts et les couleurs... et tout le
+#        monde sait que ça ne se discute pas :)
+
 # Créer une heatmap avec axes intervertis (mois sur x et heure sur y)
+# Note : le seq(min(moyenne_conso$heure), max(moyenne_conso$heure), by = 1) n'a
+#        pas d'intérêt, les heures vont toujours de 0 à 23...
+#        En plus, il fait une référence en dur à la table `moyenne_conso`.
 ggplot(moyenne_conso, aes(x = anneemois, y = heure, fill = moy_conso)) +
-  geom_tile(color = "white") +
-  scale_y_continuous(breaks = seq(min(moyenne_conso$heure), max(moyenne_conso$heure), by = 1)) +
-  
+  geom_tile() +
+  scale_y_continuous(breaks = 0:23) +
+  scale_x_discrete() +
   scale_fill_gradient(low = "blue", high = "red", name = "Consommation (kWh)") +
   labs(title = "Moyenne de la Consommation par Mois et par Heure",
        x = "Mois",
