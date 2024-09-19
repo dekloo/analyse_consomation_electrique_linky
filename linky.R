@@ -29,7 +29,7 @@ library(lubridate)
 #        pas au bon encodage. Il faudrait donc préciser encoding = "latin1"
 #        Il est donc possible d'écrire : 
 
-data_brut <- read.csv2("C:/Users/fsenis/Downloads/mes-puissances-atteintes-30min.csv",
+data_brut <- read.csv2("mes-puissances-atteintes-30min.csv",
                        skip = 2,
                        col.names = c("heure", "conso", "nature"),
                        encoding = "latin1")
@@ -71,7 +71,7 @@ data_brut <- data_brut %>% select(-nature)
 #        pas la charger en renseignant le paramètre colClasses= de read.csv2()
 #        il faut mettre "NULL" en regard de la colonne en question
 #
-#data_brut <- read.csv2("C:/Users/fsenis/Downloads/mes-puissances-atteintes-30min.csv",
+#data_brut <- read.csv2("mes-puissances-atteintes-30min.csv",
 #                       skip = 4,
 #                       colClasses = c("character","integer","NULL"),
 #                       col.names = c("heure","conso","nature"),
