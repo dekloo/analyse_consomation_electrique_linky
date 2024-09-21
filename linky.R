@@ -59,7 +59,7 @@ datas <- datas %>% mutate(date  = as.Date(date, format = '%d/%m/%Y'),
 # Calculer la moyenne de la consommation par mois et par heure
 moyenne_conso <- datas %>%
   group_by(anneemois, heure) %>%
-  summarise(moy_conso = sum(conso))
+  summarise(moy_conso = mean(conso, na.rm = TRUE))
 
 # Note : Là on touche à ggplot() donc les gouts et les couleurs... et tout le
 #        monde sait que ça ne se discute pas :)
